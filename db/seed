@@ -1,0 +1,17 @@
+CREATE TABLE users (
+    id serial primary key,
+    name varchar,
+    email varchar
+),
+ 
+CREATE TABLE barber (
+    id serial primary key,
+    name varchar
+),
+
+create table appointment (
+    id primary key,
+    user_id INT REFERENCES users(id),
+    barber_id INT REFERENCES barber(id),
+    time date
+)
